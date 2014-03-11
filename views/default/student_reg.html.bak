@@ -1,0 +1,148 @@
+<html>
+<head>    
+    <style type="text/css">
+      
+      #outer  {position:absolute;
+        float:left;
+        left:200px;
+        width:800px;
+        height:300px;
+        background:#F0F0F0;
+        margin-top:100px;
+            border-radius:20px;  
+        }
+       
+         b
+        {
+            position:relative;
+            float:left;
+            left:250px;
+            font-size:50px;
+            margin-top:20px;
+            text-decoration:underline;
+            
+            
+        } 
+        
+        #innerdiv{
+            position:relative;
+            float:left;
+            left:0px;
+            margin-top:100px;
+                    }
+         #innerdiv1{
+            position:absolute;
+            float:left;
+            left:120px;
+            margin-top:150px;
+            margin-left:0px;
+                    }
+         #innerdiv2{
+            position:absolute;
+            float:left;
+            left:300px;
+            margin-top:200px;
+         
+                    }
+
+    </style>
+    <script>
+           function getDates() {
+    var month = document.getElementById("MM");
+    var selectedmonth = month.options[month.selectedIndex].value;
+    var date = document.getElementById("DD");
+    var i=1;
+    var days=29;
+    if (selectedmonth === '02') {
+        days=29;
+    } else if (selectedmonth === '01' || selectedmonth === '03' || selectedmonth === '05' || selectedmonth === '07' || selectedmonth === '08') {
+        days = 31;
+    } else {
+        days = 30;
+    }
+    for(i=1;i<=days;i++) {
+        var ele = document.createElement('option');
+        ele.setAttribute('value',i);
+        ele.textContent=i;
+        date.appendChild(ele);
+    }
+    var year = document.getElementById("YYYY");
+    for(i=1900;i<=2013;i++) {
+        var ele = document.createElement('option');
+        ele.setAttribute('value',i);
+        ele.textContent=i;
+        year.appendChild(ele);
+    }
+}
+    </script>
+    </head>
+    
+    <body>
+      
+        <img src="iiitLogo.jpg" >
+     
+        <form action="addstudent_basicdetails" method='post'>
+            <table align="center" style="border:solid;border-radius:10px;background:#FFFFFF;width:500px;height:600px;border-width:medium;border-color: 	#F0F0F0 ;">
+          <tr>
+              <td>RollNo*: </td>
+              <td><input type="text" name="rollno" required></td>
+          </tr>
+          <tr>
+              <td>First Name*:</td><td><input type="text" name="firstname" required></td>
+          </tr>
+          <tr>
+              <td>Last Name*:</td><td><input type="text" name="lastname" required></td>
+          </tr>
+            <tr>
+                <td>DOB*:</td><td><input type="text" name="dob"></td>
+          </tr>
+          <tr>
+              <td>Gender:</td>
+              <td>
+              <input type="radio" name="gender" value="male">Male
+              <input type="radio" name="gender" value="female">Female
+              </td>
+          </tr>
+          <tr>
+              <td>Email_id*:</td><td><input type="email" name="emailid" required></td>
+          </tr>
+          <tr>
+              <td>Password*:</td><td><input type="password" name="pwd" required></td>
+          </tr>
+          <tr>
+              <td>Confirm Password*</td><td><input type="password" name="verifypwd" required></td>
+          </tr>
+          <tr>
+              <td>Programme</td>
+              <td>
+              <select id="program" name="program">
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech.</option>
+            
+            </select>
+              </td>
+          </tr>
+            
+          <tr>
+              <td>Department</td>
+              <td>
+              <select id="department" name="dept">
+            <option value="CSE">CSE</option>
+            <option value="CSIS">CSIS</option>
+            <option value="VLSI">VLSI</option>
+            <option value="BIO-INFORMATICS">BIO-INFORMATICS</option>
+            
+            </select>
+              </td>
+          </tr>
+          <tr>
+              <td>Contact No*:</td><td><input type="tel" name="mobile" required></td>
+          </tr>
+          <tr>
+              <td></td><td><input type="submit" value="submit"></td>
+          </tr>
+            </table>
+        </form>
+                
+         </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>    
+
+    </head>
+    
+    <body>
+        {{extend 'student_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+       
+            <table cellpadding="20" cellspacing="20" style="font-size:15px;">
+                        <tr><td style="position:relative;float:left;left:200px;font-size:20px;text-decoration:underline;">Personal Details</td></tr>
+              
+                <tr><td>{{=form1}}</td></tr>
+                 <tr><td>{{=form2}}</td></tr>
+                <tr><td><a href="{{=URL('student','updateprofile')}}">Update Profile</a></td></tr>
+                    </table>             
+     
+        </div>
+    </body>
+</html>

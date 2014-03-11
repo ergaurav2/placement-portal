@@ -1,0 +1,238 @@
+# coding: utf8
+# try something like
+from company import Company
+from gluon.tools import Mail
+def index(): return dict(message="hello from student.py")
+
+# controller
+
+def layout_check():
+    form=SQLFORM(db.tpo_basicdetails)
+    return dict(form=form)
+
+
+    
+def random():
+    return dict()
+
+
+
+
+############################################################################################################     methods
+
+
+
+###############################1111111111111111111111111111111111111111111111111#######################
+
+####controller
+
+def login():
+    response.flash = T("Welcome to web2py!")
+    return dict(message=T('Hello World'))
+
+####method
+
+def validate_login():
+    if request.vars.signin:
+        row = db((db.company_basicdetails.emailid==request.vars.emailid) & (db.company_basicdetails.pwd==request.vars.pwd)).select().first()
+        if row:    
+            session.user='company'
+            session.emailid=request.vars.emailid
+            session.companyname=row.companyname
+            session.login=True
+            redirect(URL('company','home'))
+            return dict(message=request.vars.emailid)
+        else :
+            redirect(URL('company','login'))
+            #redirect(URL('company','registration'))
+            return dict(message="Who are you ?")
+    else:
+        return (redirect(URL('company','registration')))
+      
+###########################2222222222222222222222222222#############################
+####controller
+
+def registration():
+   form=SQLFORM(db.company_basicdetails,
+                fields=['companyname','contactpersonname','designation','emailid','pwd','website','mobileno','officeno','address','about'])
+   if form.process().accepted:
+       redirect(URL('company','login'))
+   elif form.errors:
+       response.flash = 'form has errors'
+    #form = SQLFORM(db.student_basicdetails,
+     #              fields=['rollno', 'firstname'])
+   return dict(form=form)    
+####method
+
+def new_registration():
+    obj=Company()
+    obj.createbasiccompany(request.vars)
+    obj.insertcompany(db)
+    return dict()
+
+
+###############################################################################################################
+
+
+##################################################################################################
+
+#######333333333333333333333333333333333################
+
+#####method
+def logout():
+   #To logout
+    del session.companyname
+    del session.login
+    del session.user
+    del session.emailid
+    redirect(URL('login'))
+
+    
+#######44444444444444444444444444444#####################
+
+#####controller
+
+def forgot_pass():
+    return dict()
+
+######method
+
+def forgot_password():
+    mail = Mail() 
+    mail.settings.server = 'smtp.gmail.com:587' 
+    mail.settings.sender = 'placementtpo@gmail.com'
+    mail.settings.login = 'placementtpo@gmail.com:placementpg1' 
+    mailid=request.vars.emailid
+    row=db(db.company_basicdetails.emailid==mailid).select().first()
+    if row:
+        msg=row.pwd
+        mail.send(to=[str(mailid)], subject="Reset Password", message=str(msg))
+        return(redirect(URL('default','home')))
+    
+    
+    
+###################55555555555555555555555555555555555555555555
+
+######controller
+
+def home():
+    checkcompanyvalidlogin()
+    obj_comapny=Company()
+    #obj_student.getstudentbasicdetails("jindal.manishkumar1@gmail.com",db)
+    obj_comapny.getcompanybasicdetails(session.emailid,db)
+    return dict(companydetails=obj_comapny)
+
+
+
+########################6666666666666666666666666666666666666666666
+
+#######controller
+
+def updateprofile():
+    checkcompanyvalidlogin()
+    obj_company=Company()
+    #obj_student.getstudentbasicdetails("jindal.manishkumar1@gmail.com",db)
+    print "update profile",session.emailid
+    obj_company.getcompanybasicdetails(session.emailid,db)
+    return dict(companydetails=obj_company)
+
+
+#######method
+def saveprofile():
+    checkcompanyvalidlogin()
+    obj_company=Company()
+    #obj_student.getstudentbasicdetails("jindal.manishkumar1@gmail.com",db)
+    obj_company.createbasiccompany(request.vars)
+    print session.emailid
+    obj_company.updatecompany(session.emailid,db)
+    redirect(URL('company','home'))
+    return dict()
+
+
+###########################################77777777777777777777777777777777777777777777777
+
+########controller
+
+def addevent(): 
+    checkcompanyvalidlogin() 
+    print session.companyname 
+    grid = SQLFORM.grid(db.jobdetails.companyname==session.companyname, user_signature=False) 
+    return dict(form=grid)
+##########################################8888888888888888888888888888888888888888888888888888
+
+########controller
+
+
+def resetpassword():
+    checkcompanyvalidlogin()
+    return dict()
+
+########method
+
+
+def changepassword():
+    checkcompanyvalidlogin()
+    print 'emailid', session.emailid
+    obj=db(db.company_basicdetails.emailid==session.emailid and db.company_basicdetails.pwd==request.vars.pwd).select().first()
+    print obj
+    if obj:
+        obj.update_record(pwd=request.vars.newpwd)
+        redirect(URL('company','home'))
+    else:
+        redirect(URL('company','resetpassword'))
+   
+    #obj_student.getstudentbasicdetails("jindal.manishkumar1@gmail.com",db)
+    return dict()
+
+
+
+##############################################9999999999999999999999999999999999999999999
+
+
+########controller
+
+def contact_tpo():
+    checkcompanyvalidlogin()
+    return dict()
+
+
+########method
+
+def sendmail():
+    checkcompanyvalidlogin()
+    mail = Mail() 
+    mail.settings.server = 'smtp.gmail.com:587' 
+    mail.settings.sender = 'ghadiyahimanshugs@gmail.com'
+    mail.settings.login = 'ghadiyahimanshugs@gmail.com:ghadiyahimanshu' 
+ #elect_id = request.args(0,cast=int) 
+ #m=db(db.election.id==elect_id) 
+ #for row in db(db.election.id==elect_id).select(): 
+ #title=row.title 
+ #m.update(electionflag=True) 
+ #m.update(row.is_active=False) 
+ #for row in db().select(db.voter.ALL): 
+ # if row.election_id==title: 
+    mail.send(to=['jindal.manishkumar1@gmail.com'], subject=request.vars.subject, message=request.vars.msg)
+    return(redirect(URL('company','home')))
+    
+ #db(db.election.title==title).delete() return dict()
+    
+
+
+
+
+
+
+
+
+
+
+#####################################################################################
+
+    
+def checkcompanyvalidlogin():
+    if not session.login or not session.user or not session.user=='company' :
+        #student login page
+        
+        redirect(URL('login'))
+        return dict(message="Enter valid login id and password")

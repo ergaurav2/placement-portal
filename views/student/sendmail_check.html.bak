@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+<h1>This is the student/sendmail_check.html template</h1>
+{{=BEAUTIFY(response._vars)}}
+
+from gluon.tools import Mail
+mail = Mail()
+mail.settings.server = 'smtp.example.com:25'
+mail.settings.sender = 'you@example.com'
+mail.settings.login = 'username:password'
+
+def start(): 
+mail = Mail() 
+mail.settings.server = 'smtp.gmail.com:587' 
+mail.settings.sender = 'ghadiyahimanshugs@gmail.com'
+ mail.settings.login = 'ghadiyahimanshugs@gmail.com:ghadiyahimanshu' 
+ elect_id = request.args(0,cast=int) 
+ m=db(db.election.id==elect_id) 
+ for row in db(db.election.id==elect_id).select(): 
+ title=row.title 
+ m.update(electionflag=True) 
+ #m.update(row.is_active=False) 
+ for row in db().select(db.voter.ALL): 
+ # if row.election_id==title: 
+ mail.send(to=[row.email], subject='login details', message=row.voter_uuid) 
+ 
+ #db(db.election.title==title).delete() return dict()

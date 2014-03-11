@@ -1,0 +1,106 @@
+<html>
+<head>    
+<script>
+    function number()
+    {
+        x=document.getElementById("roll")
+        var phoneno = /^\d{10}$/;  
+        if((x.value.match(phoneno))  
+        {  
+            return true;  
+        }  
+      else  
+        {  
+        alert("message");  
+        return false;  
+        }  
+    function m1()
+    {
+     alert("hi manish");
+    }
+    </script>
+    </head>
+    
+    <body>
+        {{extend 'index_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;font-size:15px;">
+            <!-- <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+-->                
+<!--<form action="new_registration" method='post'>-->
+            <table align="center" cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+                <tr>
+                    <td style="position:relative;float:left;left:130px;font-size:25px;text-decoration:underline;">Student Registraion Form</td>
+                </tr>
+<!--
+                <tr>
+              <td>RollNo*: </td>
+              <td><input type="text" id="roll" name="rollno" required style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>First Name*:</td><td><input type="text" name="firstname" required style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Last Name*:</td><td><input type="text" name="lastname" required style="height:30px;width:300px;"></td>
+          </tr>
+            <tr>
+               <td>DOB*:</td><td><input type="text" name="birth" placeholder="dd/mm/yyyy" required style="height:30px;width:300px;"></td> 
+          </tr>
+          <tr>
+              <td>Gender:</td>
+              <td>
+              <input type="radio" name="gender" value="male">Male
+              <input type="radio" name="gender" value="female">Female
+              </td>
+          </tr>
+          <tr>
+              <td>Email_id*:</td><td><input type="email" name="emailid" required style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Password*:</td><td><input type="password" name="pwd" required style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Confirm Password*</td><td><input type="password" name="verifypwd" required style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Programme</td>
+              <td>
+              <select id="program" name="program">
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech.</option>
+            
+            </select>
+              </td>
+          </tr>
+            
+          <tr>
+              <td>Department</td>
+              <td>
+              <select id="department" name="dept">
+            <option value="CSE">CSE</option>
+            <option value="CSIS">CSIS</option>
+            <option value="VLSI">VLSI</option>
+            <option value="BIO-INFORMATICS">BIO-INFORMATICS</option>
+            
+            </select>
+              </td>
+          </tr>
+          <tr>
+              <td>Contact No*:</td><td><input type="tel" name="mobile" required style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td></td><td><input type="submit" value="submit" onclick=alert("dont do this")></td>
+          </tr>
+
+--><tr><td>
+                 {{=form}}
+                </td></tr>
+               
+            </table>
+              
+
+         <!--   </form>-->
+                          
+        </div>
+    </body>
+</html>

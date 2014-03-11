@@ -1,0 +1,22 @@
+<html>
+<head>    
+<style>
+   #name_error.error
+    {
+        height:30px;
+    }
+    </style>
+    </head>
+    
+    <body>
+        {{extend 'cheking_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+            <!-- <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+-->             
+        <label name="lab">hi manis</label>
+            {{=form}}
+
+        </div>
+    </body>
+</html>

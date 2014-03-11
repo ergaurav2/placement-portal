@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+<h1>This is the student/jq_check.html template</h1>
+{{=BEAUTIFY(response._vars)}}
+<script>
+jQuery(document).ready(function(){
+   jQuery('.one').click(function(){jQuery('.two').slideToggle()});
+});
+</script>
+<div class="one" id="a">Hello</div>
+<div class="two" id="b">World</div>
+
+{{=DIV('click me!', _onclick="jQuery(this).fadeOut()")}}
+
+{{items = ['a', 'b', 'c']}}
+<ul>
+{{for item in items:}}<li>{{=item}}</li>{{pass}}
+</ul>
+
+<marquee direction="up">
+
+One or more lines or text message or image
+
+</marquee>

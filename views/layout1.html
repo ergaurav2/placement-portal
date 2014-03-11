@@ -1,0 +1,17 @@
+﻿<!--[if HTML5]><![endif]-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    {{
+    response.files.append(URL('static','css/style.css'))
+    response.files.append(URL('static','js/mootools-1.2.1-core.js'))
+    response.files.append(URL('static','js/mootools-1.2-more.js'))
+    response.files.append(URL('static','js/slideitmoo-1.1.js'))
+    }}
+    {{include 'web2py_ajax.html'}}
+    </head>
+<body>
+
+    </body>
+</html>

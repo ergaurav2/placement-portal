@@ -1,0 +1,48 @@
+<html>
+<head>    
+
+    </head>
+    
+    <body>
+        {{extend 'layout2.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+             <table cellpadding="20" cellspacing="20" style="font-size:15px;">
+ <tr>
+                    <td style="position:relative;float:left;left:300px;font-size:25px;text-decoration:underline;">Company Profile</td>
+                </tr>
+          <tr>
+              <td>Company Name: </td>
+              <td><label>{{=companydetails.companyname}}</label></td>
+          </tr>
+          <tr>
+              <td>Contact Person:</td><td><label>{{=companydetails.contactpersonname}}</label></td>
+          </tr>
+          <tr>
+              <td>Designation:</td><td><label>{{=companydetails.designation}}</label></td>
+          </tr>
+          
+          <tr>
+              <td>Email_id:</td><td><label>{{=companydetails.emailid}}</label></td>
+          </tr>
+                    <tr>
+                        <td>Contact No:</td><td><label>{{=companydetails.mobileno}}</label></td>
+          </tr>
+          <tr>
+              <td>HR Office No:</td><td><label>{{=companydetails.officeno}}</label></td>
+          </tr>
+          <tr>
+              <td>Website:</td><td><label>{{=companydetails.website}}</label></td>
+          </tr>
+           <tr>
+               <td>Contact Address:</td><td><label>{{=companydetails.address}}</label></td>
+          </tr>
+          <tr>
+              <td>About Company:</td><td><label>{{=companydetails.about}}</label></td>
+          </tr>
+          
+            </table>
+              
+        </div>
+    </body>
+</html>

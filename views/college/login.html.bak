@@ -1,0 +1,28 @@
+<html>
+<head>    
+
+    </head>
+    
+    <body>
+        {{extend 'index_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;font-size:15px;">
+            <form action="validate_login">
+            
+                <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+                    <tr><td><b>College Login</b></td></tr>
+                    <tr>
+                        <td>Email:</td><td><input type="email" name="emailid" required style="height:30px;width:300px;"></td>
+                    </tr>
+                     <tr>
+                        <td>Password:</td><td><input type="password" name="pwd" required style="height:30px;width:300px;"></td>
+                    </tr>
+                    <tr><td></td><td><input type="submit" value="Sign in" name="signin"></td></tr>
+                </table>
+              
+ 
+            </form>
+            <p>Forgot Password??? <a href="{{=URL('college','forgot_pass')}}">Click</a>here</p>              
+        </div>
+    </body>
+</html>

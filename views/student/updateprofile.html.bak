@@ -1,0 +1,23 @@
+<html>
+<head>    
+   
+
+    </head>
+    
+    <body>
+        {{extend 'student_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+                    
+                    <table cellpadding="20" cellspacing="20" style="width:100%;height:100%;" >
+                        <tr><td style="position:relative;float:left;left:250px;font-size:20px;text-decoration:underline;"><b>Personal Details</b></td></tr>
+                      
+                        <tr><td>{{=form1}}</td></tr>
+                        <tr><td>{{=form2}}</td></tr>
+                    </table>
+                      
+
+                </div>
+
+</body>
+</html>

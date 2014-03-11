@@ -1,0 +1,45 @@
+<html>
+<head>    
+<style>
+    #para1{
+        position:relative;
+        float:left;
+        left:300px;
+        font-size:20px;
+    }
+    a,#para2{
+        position:relative;
+        float:left;
+        left:20px;
+        
+        
+    }
+    
+    </head>
+    
+    <body>
+        {{extend 'index_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+            <!-- <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+-->               
+            <p id="para1">Visit Official websites</p>
+    <br/><br/>
+            <a target=_blank href="http://www.iiit.ac.in">IIIT-H HOME </a>
+    <br/>
+            <a target=_blank href="http://www.felicity.iiit.ac.in">Felicity</a>
+    <br/>
+    
+    <p id="para2">
+    Address:-<br/>
+    International Institute of Information Technology<br/>
+    Gachibowli, Hyderabad 500 032<br/>
+    Andhra Pradesh, INDIA<br/>
+    Phone : +91-40-6653 1000<br/>
+    Fax : +91-40-6653 1413<br/>
+    </p>
+                
+            
+        </div>
+    </body>
+</html>

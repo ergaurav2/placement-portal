@@ -1,0 +1,51 @@
+<html>
+<head>    
+
+    </head>
+    
+    <body>
+        {{extend 'company_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+            <!-- <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+-->                                    <form action="saveprofile" method='post'>
+                   <table cellpadding="20" cellspacing="20" style="font-size:15px;">
+ <tr>
+                    <td style="position:relative;float:left;left:300px;font-size:25px;text-decoration:underline;">Update Profile</td>
+                </tr>
+          <tr>
+              <td>Company Name: </td>
+              <td><input type="text" value="{{=companydetails.companyname}}" name="companyname" style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Contact Person:</td><td><input type="text" value="{{=companydetails.contactpersonname}}" name="contactpersonname" style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Designation:</td><td><input type="text" value="{{=companydetails.designation}}"  name="designation" style="height:30px;width:300px;"></td>
+          </tr>
+          
+          <tr>
+              <td>Email_id:</td><td><input type="text" value="{{=companydetails.emailid}}" name="emailid" style="height:30px;width:300px;"></td>
+          </tr>
+                    <tr>
+                        <td>Contact No:</td><td><input type="text" value="{{=companydetails.mobileno}}" name="mobileno" style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>HR Office No:</td><td><input type="text" value="{{=companydetails.officeno}}" name="officeno" style="height:30px;width:300px;"></td>
+          </tr>
+          <tr>
+              <td>Website:</td><td><input type="text" value="{{=companydetails.website}}" name="website" style="height:30px;width:300px;"></td>
+          </tr>
+           <tr>
+               <td>Contact Address:</td><td><textarea rows="4" cols="40" name="address" value="{{=companydetails.address}}"></textarea></td>
+          </tr>
+          <tr>
+              <td>About Company:</td><td><textarea rows="4" cols="40" name="about" value="{{=companydetails.about}}"></textarea></td>
+          </tr>
+          
+            </table>
+                        <input type="submit"  value="update" style="position:relative;float:left;left:200px;">
+                    </form>
+        </div>
+    </body>
+</html>

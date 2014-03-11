@@ -1,0 +1,36 @@
+<html>
+<head>    
+
+    </head>
+    
+    <body>
+        {{extend 'student_layout.html'}}
+
+        <div style="position:relative;float:left;left:180px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+            <!-- <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+-->                <div style="position:relative;float:left;width:500px;height:500px;background-color:#F8F8F8;margin-top:50px;">
+<ul>
+    {{for image in images2:}}
+    {{=LI(A( image.eventdetail))}}
+    {{pass}}
+</ul>
+
+
+                </div>
+                <div style="position:relative;float:right;width:300px;height:500px;background-color:#E0E0E0;">
+                    <marquee onmouseout="this.start()" onmouseover="this.stop()" scrollamount="2" direction="up">
+
+<ul>
+    {{for image in images1:}}
+    {{=LI(A( image.noticedetail,_href=URL("download", args=image.docs)))}}
+    {{pass}}
+</ul>
+
+</marquee>
+
+                </div>
+                
+
+        </div>
+    </body>
+</html>

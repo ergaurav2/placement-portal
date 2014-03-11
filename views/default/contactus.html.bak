@@ -1,0 +1,39 @@
+<html>
+<head>    
+    <style>
+        p
+        {
+            position:relative;
+            float:left;
+            left:300px;
+            
+            
+            
+        }
+    </style>
+
+    </head>
+    
+    <body>
+        {{extend 'index_layout.html'}}
+
+        <div style="position:relative;float:left;left:200px;width:800px;background-color:#F8F8F8;border-width:2px;border:solid;border-radius:15px;">
+            <!-- <table cellpadding="10" cellspacing="20" style="position:relative;float:left;margin-top:50px;left:100px;">
+-->               
+            <p >
+                <b>Manish Kumar Jindal</b>
+                <br/>
+                M.Tech CSE - 2013<br/>
+                <a href="#" style="position:absolute;float:left;left:-50px">manish.jindal@students.iiit.ac.in</a>
+                <br/>
+                <b>Gaurav Agrawal</b>
+                    <br/>
+                 M.Tech CSE - 2013<br/>
+                <a href="#" style="position:absolute;float:left;left:-50px">gaurav.agrawal@students.iiit.ac.in</a>
+                <br/>
+                
+                
+            </p>
+        </div>
+    </body>
+</html>
